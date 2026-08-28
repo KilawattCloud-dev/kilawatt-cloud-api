@@ -1,0 +1,42 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Kilawatt Cloud Orchestration API",
+    "description": "Automated, balance-gated GPU orchestration for high-performance AI workloads.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.kilawattcloud.dev/v1",
+      "description": "Production Server"
+    }
+  ],
+  "paths": {
+    "/clusters/deploy": {
+      "post": {
+        "summary": "Deploy GPU Cluster",
+        "operationId": "deployCluster",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "gpu_type": { "type": "string", "example": "NVIDIA_B200" },
+                  "gpu_count": { "type": "integer", "example": 8 },
+                  "max_price_per_hour": { "type": "number", "example": 3.00 }
+                },
+                "required": ["gpu_type", "gpu_count"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Cluster provisioned successfully." },
+          "402": { "description": "Insufficient balance. Top-up required via Stripe." }
+        }
+      }
+    }
+  }
+}
