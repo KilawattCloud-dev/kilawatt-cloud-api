@@ -11,6 +11,7 @@ Kilawatt Cloud provides automated, zero-friction, balance-gated GPU orchestratio
 All API requests require a bearer token generated from your Kilawatt Cloud console.
 
 ```bash
+curl -X POST "https://api.kilawattcloud.dev/v1/clusters/deploy" \
 
   -H "Authorization: Bearer YOUR_KILAWATT_API_KEY" \
   -H "Content-Type: application/json" \
