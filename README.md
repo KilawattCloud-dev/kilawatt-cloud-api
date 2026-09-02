@@ -16,7 +16,7 @@ curl -X POST "https://api.kilawattcloud.dev/v1/clusters/deploy" \
   -H "Authorization: Bearer YOUR_KILAWATT_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "gpu_type": "NVIDIA_B200",
-    "gpu_count": 8,
-    "max_price_per_hour": 3.00
+    "gpu_type": "b200",
+"gpu_count": 8,
+"max_price_per_hour": 3.00
   }'
