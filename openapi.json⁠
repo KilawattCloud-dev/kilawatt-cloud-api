@@ -23,7 +23,7 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "gpu_type": { "type": "string", "example": "NVIDIA_B200" },
+                  "gpu_type": { "type": "string", "example": "b200" },
                   "gpu_count": { "type": "integer", "example": 8 },
                   "max_price_per_hour": { "type": "number", "example": 3.00 }
                 },
